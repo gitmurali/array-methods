@@ -8,7 +8,7 @@ describe("array methods", () => {
       ).toBe(55);
     });
 
-    it("should return value if theres no init value", () => {
+    it("should returns value if theres no init value", () => {
       expect(
         reduce([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], (sum, value) => sum + value)
       ).toBe(55);
