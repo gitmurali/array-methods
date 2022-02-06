@@ -2,6 +2,7 @@
 //   return sum + number;
 // }, 0)
 
+// reduce function
 export function reduce(array, callback, initValue) {
   const { length } = array;
 
@@ -21,6 +22,7 @@ export function reduce(array, callback, initValue) {
   return acc;
 }
 
+// filter function
 export function filter(array, callback) {
   const { length } = array;
   const result = [];
