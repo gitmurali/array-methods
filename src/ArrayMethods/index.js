@@ -22,5 +22,15 @@ export function reduce(array, callback, initValue) {
 }
 
 export function filter(array, callback) {
-  // implement this function
+  const { length } = array;
+  const result = [];
+
+  for (let index = 0; index < length; index++) {
+    const value = array[index];
+    if (callback(value, index, array)) {
+      result.push(value);
+    }
+  }
+
+  return result;
 }
