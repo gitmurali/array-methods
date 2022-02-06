@@ -27,5 +27,13 @@ describe("array methods", () => {
         )
       ).toBe(JSON.stringify([2, 4, 6, 8, 10]));
     });
+
+    it("should return filtered odd values", () => {
+      expect(
+        JSON.stringify(
+          filter([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], (value) => value % 2 !== 0)
+        )
+      ).toBe(JSON.stringify([1, 3, 5, 7, 9]));
+    });
   });
 });
