@@ -63,10 +63,26 @@ export function findIndex(array, callback) {
 
   for (let index = 0; index < length; index++) {
     const value = array[index];
+
     if (callback(value, index, array)) {
       return index;
     }
   }
 
   return result;
+}
+
+//find
+export function find(array, callback) {
+  const { length } = array;
+
+  for (let index = 0; index < length; index++) {
+    const value = array[index];
+
+    if (callback(value, index, array)) {
+      return array[index];
+    }
+  }
+
+  return;
 }
