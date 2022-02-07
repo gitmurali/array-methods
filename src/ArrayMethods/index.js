@@ -1,6 +1,12 @@
-// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].reduce((sum, number) => {
-//   return sum + number;
-// }, 0)
+//forEach function
+export function forEach(array, callback) {
+  const { length } = array;
+
+  for (let index = 0; index < length; index++) {
+    const value = array[index];
+    callback(value, index, array);
+  }
+}
 
 // reduce function
 export function reduce(array, callback, initValue) {
@@ -31,6 +37,34 @@ export function filter(array, callback) {
     const value = array[index];
     if (callback(value, index, array)) {
       result.push(value);
+    }
+  }
+
+  return result;
+}
+
+//map function
+export function map(array, callback) {
+  const { length } = array;
+  const result = [];
+
+  for (let index = 0; index < length; index++) {
+    const value = array[index];
+    result[index] = callback(value, index, array);
+  }
+
+  return result;
+}
+
+//findIndex
+export function findIndex(array, callback) {
+  const { length } = array;
+  const result = [];
+
+  for (let index = 0; index < length; index++) {
+    const value = array[index];
+    if (callback(value, index, array)) {
+      return index;
     }
   }
 

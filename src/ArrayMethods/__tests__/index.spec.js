@@ -1,4 +1,4 @@
-import { reduce, filter } from "./index";
+import { reduce, filter } from "../index";
 
 describe("array methods", () => {
   describe("reduce function", () => {
