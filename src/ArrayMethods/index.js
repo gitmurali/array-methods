@@ -101,3 +101,73 @@ export function indexOf(array, callback) {
 
   return -1;
 }
+
+//lastIndexOf
+export function lastIndexOf(array, callback) {
+  const { length } = array;
+
+  for (let index = length - 1; index > -1; index--) {
+    const value = array[index];
+
+    if (callback(value, index, array)) {
+      return index;
+    }
+  }
+
+  return -1;
+}
+
+//every
+export function every(array, callback) {
+  const { length } = array;
+
+  for (let index = 0; index < length; index++) {
+    const value = array[index];
+
+    if (!callback(value, index, array)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+//some
+export function some(array, callback) {
+  const { length } = array;
+
+  for (let index = 0; index < length; index++) {
+    const value = array[index];
+
+    if (callback(value, index, array)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+//includes
+export function includes(array, callback) {}
+
+//flattening
+export function flat(array, callback) {}
+
+//flat Map
+export function flatMap(array, callback) {}
+
+//concatening
+export function concat(array, callback) {}
+
+//join
+//reverse
+//shift
+//unshift
+//slice
+//splice
+//pop
+//push
+//fill
+//values
+//keys
+//entries
