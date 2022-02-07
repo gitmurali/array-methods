@@ -1,8 +1,8 @@
 import { map } from "../index";
 
 describe("array methods", () => {
-  describe("reduce function", () => {
-    it("should return the reduce value", () => {
+  describe("map function", () => {
+    it("should return the map value", () => {
       expect(
         map([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], (value) => value * 10)
       ).toStrictEqual([10, 20, 30, 40, 50, 60, 70, 80, 90, 100]);
