@@ -1,4 +1,8 @@
-//forEach function
+/**
+ * forEach function
+ * @param {Array} array
+ * @param {functin} callback
+ */
 export function forEach(array, callback) {
   const { length } = array;
 
@@ -147,8 +151,20 @@ export function some(array, callback) {
   return false;
 }
 
-//includes
-export function includes(array, callback) {}
+// includes
+export function includes(array, callback) {
+  const { length } = array;
+
+  for (let index = 0; index < length; index++) {
+    const value = array[index];
+
+    if (callback(value, index, array)) {
+      return true;
+    }
+  }
+
+  return false;
+}
 
 //flattening
 export function flat(array, callback) {}
@@ -161,13 +177,13 @@ export function concat(array, callback) {}
 
 //join
 //reverse
-//shift
-//unshift
 //slice
 //splice
-//pop
-//push
 //fill
 //values
 //keys
 //entries
+//shift
+//unshift
+//pop
+//push
