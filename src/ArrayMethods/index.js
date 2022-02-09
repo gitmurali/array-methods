@@ -217,6 +217,17 @@ export function join(array, joinWith) {
 }
 
 //reverse
+export function reverse(array) {
+  const result = [];
+  const lastIndex = array.length - 1;
+  for (let i = lastIndex; i > -1; i--) {
+    const value = array[i];
+    result[lastIndex - i] = value;
+  }
+
+  return result;
+}
+
 //slice
 //splice
 //fill
