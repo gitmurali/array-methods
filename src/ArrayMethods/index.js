@@ -190,8 +190,10 @@ export function flat(array, depth = 0) {
     return array;
   }
 
-  return reduce(array, (result, curValue) =>
-    concat(result, flat(curValue, depth - 1))
+  return reduce(
+    array,
+    (result, curValue) => concat(result, flat(curValue, depth - 1)),
+    []
   );
 }
 
