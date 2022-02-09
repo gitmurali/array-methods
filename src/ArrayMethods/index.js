@@ -197,9 +197,25 @@ export function flat(array, depth = 0) {
 }
 
 //flat Map
-export function flatMap(array, callback) {}
+export function flatMap(array, callback) {
+  return flat(map(array, callback), 1);
+}
 
 //join
+export function join(array, joinWith) {
+  return reduce(
+    array,
+    (result, current, index) => {
+      if (index === 0) {
+        return current;
+      }
+
+      return `${result}${joinWith}${current}`;
+    },
+    ""
+  );
+}
+
 //reverse
 //slice
 //splice
