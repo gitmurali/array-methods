@@ -166,14 +166,37 @@ export function includes(array, callback) {
   return false;
 }
 
-//flattening
-export function flat(array, callback) {}
+// concat
+export function concat(array, ...values) {
+  const result = [...array];
+  const { length } = values;
+
+  for (let index = 0; index < length; index++) {
+    const value = values[index];
+
+    if (Array.isArray(value)) {
+      result.push(...value);
+    } else {
+      result.push(value);
+    }
+  }
+
+  return result;
+}
+
+//flattening [1,2,3,[9,8, [5,6]]].flat(2)
+export function flat(array, depth = 0) {
+  if (depth < 1 || !Array.isArray(array)) {
+    return array;
+  }
+
+  return reduce(array, (result, curValue) =>
+    concat(result, flat(curValue, depth - 1))
+  );
+}
 
 //flat Map
 export function flatMap(array, callback) {}
-
-//concatening
-export function concat(array, callback) {}
 
 //join
 //reverse
