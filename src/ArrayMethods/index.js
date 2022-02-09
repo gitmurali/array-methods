@@ -189,10 +189,9 @@ export function flat(array, depth = 0) {
   if (depth < 1 || !Array.isArray(array)) {
     return array;
   }
-
-  return reduce(
-    array,
-    (result, curValue) => concat(result, flat(curValue, depth - 1)),
+  // [9,8, [5,6]]
+  return array.reduce(
+    (result, curValue) => result.concat(flat(curValue, depth - 1)),
     []
   );
 }
