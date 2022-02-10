@@ -235,6 +235,7 @@ export function reverse(array) {
 //keys
 //entries
 //shift
+export function shift() {}
 //unshift
 //pop
 //push
