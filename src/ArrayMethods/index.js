@@ -245,11 +245,31 @@ export function slice(array, startIndex = 0, endIndex = array.length) {
 
 //splice
 export function splice(
-  aray,
+  array,
   insertAtIndex,
   removeNumberOfElements,
   ...values
-) {}
+) {
+  const firstPart = slice(array, 0, insertAtIndex);
+  const secondPart = slice(array, insertAtIndex + removeNumberOfElements);
+  const removedElements = slice(
+    array,
+    insertAtIndex,
+    insertAtIndex + removeNumberOfElements
+  );
+
+  const joinedParts = firstPart.concat(values, secondPart);
+
+  const { length: joinedPartsLen } = joinedParts;
+
+  for (let index = 0; index < joinedPartsLen; index++) {
+    array[index] = joinedParts[index];
+  }
+
+  array.length = joinedPartsLen;
+
+  return removedElements;
+}
 //fill
 //values
 //keys
