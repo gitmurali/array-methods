@@ -229,7 +229,22 @@ export function reverse(array) {
 }
 
 //slice
+export function slice(array) {
+  const result = [];
+
+  for (let index = 0; index < array.length; index++) {
+    const value = array[index];
+
+    if (index < array.length) {
+      result.push(value);
+    }
+  }
+
+  return result;
+}
+
 //splice
+
 //fill
 //values
 //keys
