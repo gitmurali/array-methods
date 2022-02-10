@@ -270,12 +270,38 @@ export function splice(
 
   return removedElements;
 }
+
+//shift
+export function shift(array) {
+  const { length } = array;
+  const firstValue = array[0];
+
+  for (let index = 1; index < length; index++) {
+    const value = array[index];
+    array[index - 1] = value;
+  }
+
+  array.length = length - 1;
+
+  return firstValue;
+}
+
+//unshift
+export function unshift(array, ...values) {
+  const mergedArrays = values.concat(array);
+  const { length } = mergedArrays;
+
+  for (let i = 0; i < length; i++) {
+    const value = mergedArrays[i];
+    array[i] = value;
+  }
+
+  return array.length;
+}
+
+//push
+//pop
 //fill
 //values
 //keys
 //entries
-//shift
-export function shift() {}
-//unshift
-//pop
-//push
