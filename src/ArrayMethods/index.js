@@ -229,10 +229,10 @@ export function reverse(array) {
 }
 
 //slice
-export function slice(array) {
+export function slice(array, startIndex = 0, endIndex = array.length) {
   const result = [];
 
-  for (let index = 0; index < array.length; index++) {
+  for (let index = startIndex; index < endIndex; index++) {
     const value = array[index];
 
     if (index < array.length) {
@@ -244,7 +244,12 @@ export function slice(array) {
 }
 
 //splice
-
+export function splice(
+  aray,
+  insertAtIndex,
+  removeNumberOfElements,
+  ...values
+) {}
 //fill
 //values
 //keys
