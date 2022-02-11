@@ -300,7 +300,18 @@ export function unshift(array, ...values) {
 }
 
 //push
+export function push(array, ...values) {
+  const { length: arrayLen } = array;
+  const { length: valuesLen } = values;
+
+  for (let index = 0; index < valuesLen; index++) {
+    array[arrayLen + index] = values[index];
+  }
+
+  return array.length;
+}
 //pop
+export function pop() {}
 //fill
 //values
 //keys
