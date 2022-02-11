@@ -311,7 +311,13 @@ export function push(array, ...values) {
   return array.length;
 }
 //pop
-export function pop() {}
+export function pop(array) {
+  const { length } = array;
+  const value = array[length - 1];
+  array.length = length - 1;
+
+  return value;
+}
 //fill
 //values
 //keys
