@@ -318,7 +318,15 @@ export function pop(array) {
 
   return value;
 }
+
 //fill
+export function fill(array) {}
+
 //values
+export function values(array) {}
+
 //keys
+export function keys(array) {}
+
 //entries
+export function entries(array) {}
