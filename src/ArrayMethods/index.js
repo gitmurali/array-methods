@@ -320,7 +320,12 @@ export function pop(array) {
 }
 
 //fill
-export function fill(array) {}
+export function fill(array, value, startIndex = 0, endIndex = array.length) {
+  for (let index = startIndex; index <= endIndex; index++) {
+    array[index] = value;
+  }
+  return array;
+}
 
 //values
 export function values(array) {}
