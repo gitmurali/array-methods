@@ -328,10 +328,31 @@ export function fill(array, value, startIndex = 0, endIndex = array.length) {
 }
 
 //values
-export function values(array) {}
+export function values(array) {
+  const { length } = array;
+
+  function* createGenerator() {
+    for (let index = 0; index < length; index++) {
+      const value = array[index];
+      yield value;
+    }
+  }
+
+  return createGenerator();
+}
 
 //keys
-export function keys(array) {}
+export function keys(array) {
+  const { length } = array;
+
+  function* createGenerator() {
+    for (let index = 0; index < length; index++) {
+      yield index;
+    }
+  }
+
+  return createGenerator();
+}
 
 //entries
 export function entries(array) {}
