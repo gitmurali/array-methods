@@ -355,4 +355,15 @@ export function keys(array) {
 }
 
 //entries
-export function entries(array) {}
+export function entries(array) {
+  const { length } = array;
+
+  function* createGenerator() {
+    for (let index = 0; index < length; index++) {
+      const value = array[index];
+      yield [index, value];
+    }
+  }
+
+  return createGenerator();
+}
