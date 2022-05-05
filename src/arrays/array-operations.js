@@ -14,3 +14,9 @@ var finalValueAfterOperations = function (operations) {
   }
   return X;
 };
+
+//solution #2
+
+// var finalValueAfterOperations = function(operations) {
+//   return operations.reduce((acc, curr) => curr[1] === '+' ? ++acc : --acc, 0)
+// };
