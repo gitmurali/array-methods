@@ -17,3 +17,9 @@ var kidsWithCandies = function (candies, extraCandies) {
 
   return result;
 };
+
+// solutiion2
+var kidsWithCandies = function (candies, extraCandies) {
+  const max = Math.max(...candies);
+  return candies.map((candy) => candy + extraCandies >= max);
+};
