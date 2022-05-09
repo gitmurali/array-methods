@@ -17,3 +17,7 @@ var smallerNumbersThanCurrent = function (nums) {
 
   return result;
 };
+
+// # solution 2
+// const map = new Map([...nums].sort((a, b) => b - a).map((val, idx) => [val, nums.length-idx-1]))
+// return nums.map(val => map.get(val))
