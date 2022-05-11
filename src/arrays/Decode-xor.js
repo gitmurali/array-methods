@@ -8,3 +8,12 @@ var decode = function (encoded, first) {
   encoded.map((val, idx) => result.push(result[idx] ^ val));
   return result;
 };
+
+//solution 2
+// return encoded.reduce(
+//   (acc, cv, i) => {
+//     acc.push(acc[i] ^ cv);
+//     return acc;
+//   },
+//   [first]
+// );
