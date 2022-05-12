@@ -31,3 +31,6 @@ var countMatches = function (items, ruleKey, ruleValue) {
 //   };
 //   return items.reduce((acc, item, idx) => item[map[ruleKey]] === ruleValue ? acc+1 : acc, 0);
 // };
+
+//solution #3
+// const countMatches = (items, key, value) => items.filter(i => i[map[key]] == value).length
