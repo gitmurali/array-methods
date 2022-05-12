@@ -13,3 +13,12 @@ var createTargetArray = function (nums, idxArr) {
     return acc;
   }, []);
 };
+
+//# solution2
+// var createTargetArray = function(nums, index) {
+//   return index.reduce((result, index, i) => {
+//       const leftSide = result.slice(0, index);
+//       const rightSide = result.slice(index);
+//       return [...leftSide, nums[i], ...rightSide];
+//   }, []);
+// };
