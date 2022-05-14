@@ -9,18 +9,39 @@ const data = [
   { Phase: "Phase 2", Step: "Step 2", Task: "Task 2", Value: "40" }
 ];
 
-// #solution 1
+// #resul 1
 
 // {
 //   "phase 1": "20",
 //   "phase 2": "30"
 // }
 
-function groupBy(xs, key) {
-  return xs.reduce(function (rv, x) {
-    rv[x[key]] = +x["Value"] + (rv[x[key]] ? rv[x[key]] : 0);
-    return rv;
+// #result 2
+// {
+//   "phase 1": [...],
+//   "phase 2": [...]
+// }
+
+// #result 3
+// {
+//   "Task 1": [...],
+//   "Task 2": [...]
+// }
+
+// function groupBy1(xs, key) {
+//   return xs.reduce(function(rv, x) {
+//     rv[x[key]] = +x["Value"] + (rv[x[key]] ? rv[x[key]] : 0);
+//     return rv;
+//   }, {});
+// }
+
+// console.log(groupBy1(data, "Phase"))
+
+function groupBy2(arr, key) {
+  return arr.reduce((acc, cv) => {
+    acc[cv[key]] = [...(acc[cv[key]] || []), cv];
+    return acc;
   }, {});
 }
 
-console.log(groupBy(data, "Phase"));
+console.log(groupBy2(data, "Step"));
