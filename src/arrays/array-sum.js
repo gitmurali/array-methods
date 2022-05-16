@@ -11,4 +11,16 @@ function previousItem() {
   return arr;
 }
 
-console.log(previousItem([1, 2, 3, 4, 5]));
+function previousItem2() {
+  let [args] = Object.values(arguments);
+  let arr = [];
+  arr[0] = args[0] + args[args.length - 1];
+  return args.reduce((acc, cv, idx) => {
+    if (idx > 0) {
+      acc[idx] = acc[idx - 1] + args[idx];
+    }
+    return acc;
+  }, arr);
+}
+
+console.log(previousItem2([1, 2, 3, 4, 5]));
