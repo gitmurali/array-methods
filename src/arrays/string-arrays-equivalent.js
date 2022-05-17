@@ -10,3 +10,8 @@ var arrayStringsAreEqual = function (word1, word2) {
   const str2 = word2.reduce((acc, cv) => acc + cv, "");
   return str1 === str2;
 };
+
+//#solution2
+var arrayStringsAreEqual2 = function (word1, word2) {
+  return word1.join("") === word2.join("");
+};
