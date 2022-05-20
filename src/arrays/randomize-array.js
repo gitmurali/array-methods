@@ -16,3 +16,9 @@ function randomizeArray(array) {
 var arr = [2, 11, 37, 42];
 randomizeArray(arr);
 console.log(arr);
+
+function shuffleArray(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+console.log(shuffleArray([1, 2, 3, 4, 5]));
