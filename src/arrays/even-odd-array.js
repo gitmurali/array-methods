@@ -10,9 +10,9 @@ function insert(val) {
     const curr = +arr[i];
     const next = +arr[i + 1];
     if (curr % 2 === 0 && next % 2 === 0) {
-      acc += curr + "*";
+      acc += next ? curr + "*" : curr;
     } else if (curr % 2 !== 0 && next % 2 !== 0) {
-      acc += curr + "-";
+      acc += next ? curr + "-" : curr;
     } else {
       acc += curr;
     }
@@ -21,3 +21,4 @@ function insert(val) {
 }
 
 insert("21462675756");
+insert("98676555533");
