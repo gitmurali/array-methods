@@ -13,3 +13,9 @@ var largestAltitude = function (gain) {
   }
   return res;
 };
+
+const largestAltitude2 = (gain) => {
+  return Math.max(
+    ...gain.reduce((acc, cv, i) => (acc.push(cv + acc[i]), acc), [0])
+  );
+};
