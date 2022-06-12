@@ -20,10 +20,13 @@ var maxProduct = function (nums) {
 const maxProduct1 = (
   nums,
   max = nums.reduce(
-    (prev, val) => [
-      Math.max(prev[1], Math.min(prev[0], val)),
-      Math.max(prev[0], val)
-    ],
+    (prev, val) => {
+      console.log(prev[0], prev[1]);
+      return [
+        Math.max(prev[1], Math.min(prev[0], val)),
+        Math.max(prev[0], val)
+      ];
+    },
     [0, 0]
   )
 ) => (max[0] - 1) * (max[1] - 1);
