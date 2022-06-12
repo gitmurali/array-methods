@@ -7,6 +7,7 @@
 var countGoodRectangles = function (rectangles) {
   let count = 0;
   let max = 0;
+
   for (const val of rectangles) {
     let min = Math.min(val[0], val[1]);
 
