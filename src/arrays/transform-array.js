@@ -7,3 +7,9 @@ var b = ["a", "b", "c"];
 
 // solution
 a.reduce((res, cv, i) => [...res, [cv, b[i]]], []);
+
+//solution 2
+const zip = (a, b) => a.map((k, i) => [k, b[i]]);
+
+console.log(zip([1, 2, 3], ["a", "b", "c"]));
+// [[1, "a"], [2, "b"], [3, "c"]]
