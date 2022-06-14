@@ -1,3 +1,5 @@
+// https://stackoverflow.com/questions/22015684/how-do-i-zip-two-arrays-in-javascript
+
 var a = [1, 2, 3];
 var b = ["a", "b", "c"];
 
