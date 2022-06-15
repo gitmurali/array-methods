@@ -24,3 +24,8 @@ console.log(
 );
 
 console.log(infiniteRange(1000000).next());
+
+// another function.
+function range1(start, end) {
+  return [...Array(1 + end - start).keys()].map((v) => start + v);
+}
