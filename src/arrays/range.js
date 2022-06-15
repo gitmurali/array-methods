@@ -3,3 +3,8 @@ const range = (start, stop, step = 1) => {
     .filter((i) => !(i % Math.round(step)))
     .map((v) => start + v);
 };
+
+range(0, 8); // [0, 1, 2, 3, 4, 5, 6, 7]
+range(4, 9); // [4, 5, 6, 7, 8]
+range(4, 9, 2); // [4, 6, 8]
+range(4, 9, 3); // [4, 7]
