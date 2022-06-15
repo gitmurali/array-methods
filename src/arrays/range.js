@@ -17,3 +17,10 @@ function* range(x, y) {
     else return null;
   }
 }
+const infiniteRange = (x) => range(x, Infinity);
+
+console.log(
+  Array.from(range(1, 10)) // [1,2,3,4,5,6,7,8,9,10]
+);
+
+console.log(infiniteRange(1000000).next());
