@@ -1,5 +1,6 @@
 [[[[[[[[[2]]]]]]]]] == 2; // true
 //the above array converts to this internally 2 === Number([2].valueOf().toString())
+// Keep in mind that even numeric keys are treated as property names (ie strings) before any array-magic happens.
 
 var a = [0, 1, 2, 3];
 a[[2]] === a[2]; // this is true
