@@ -12,3 +12,11 @@ function random(arr, n) {
 }
 
 random([1, 2, 3, 4, 5], 3);
+
+const pickRandom = (arr, count) => {
+  let _arr = [...arr];
+  return [...Array(count)].map(
+    () => _arr.splice(Math.floor(Math.random() * _arr.length), 1)[0]
+  );
+};
+pickRandom([1, 2, 3, 4, 5], 3);
