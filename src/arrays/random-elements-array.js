@@ -22,3 +22,6 @@ const pickRandom = (arr, count) => {
   );
 };
 pickRandom([1, 2, 3, 4, 5], 3);
+
+// solution 3
+[1, 2, 3, 4, 5].sort(() => Math.random() - Math.random()).slice(0, n);
