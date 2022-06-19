@@ -25,3 +25,11 @@ pickRandom([1, 2, 3, 4, 5], 3);
 
 // solution 3
 [1, 2, 3, 4, 5].sort(() => Math.random() - Math.random()).slice(0, n);
+
+// solution 4
+const n = 5;
+const sample = [1, 2, 3, 4, 5]
+  .map((x) => ({ x, r: Math.random() }))
+  .sort((a, b) => a.r - b.r)
+  .map((a) => a.x)
+  .slice(0, n);
