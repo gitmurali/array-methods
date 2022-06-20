@@ -5,3 +5,8 @@ myarray.slice(1);
 
 //solution 2
 myarray.shift();
+console.log(myarray);
+
+//solution 3 ignore first element and return the rest.
+const [, ...rest] = myarray;
+console.log(rest);
