@@ -1,3 +1,4 @@
+// solution 1
 function getAllIndexes(arr, val) {
   let i = -1;
   const result = [];
@@ -9,6 +10,7 @@ function getAllIndexes(arr, val) {
   return result;
 }
 
+// solution 2
 function getAllIndexes1(arr, val) {
   var indexes = [],
     i;
