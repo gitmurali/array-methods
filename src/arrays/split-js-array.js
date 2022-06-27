@@ -9,3 +9,15 @@ function splitToChunks(array, parts) {
 }
 
 splitToChunks([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 3);
+
+// solution 2
+function split(array, n) {
+  let [...arr] = array;
+  var res = [];
+  while (arr.length) {
+    res.push(arr.splice(0, n));
+  }
+  return res;
+}
+
+split([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 3);
