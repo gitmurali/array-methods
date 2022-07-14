@@ -16,3 +16,12 @@ var minOperations = function (nums) {
 
   return count;
 };
+
+// solution 2
+var minOperations = function (nums) {
+  var max = 0;
+  return nums.reduce((acc, cur) => {
+    max = Math.max(cur, ++max);
+    return acc + max - cur;
+  }, 0);
+};
