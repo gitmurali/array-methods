@@ -12,3 +12,12 @@ var prefixCount = function (words, pref) {
     return res;
   }, 0);
 };
+
+// solution 2
+const prefixCount = (words, pref) => {
+  let count = 0;
+  for (const word of words) {
+    word.startsWith(pref) && ++count;
+  }
+  return count;
+};
