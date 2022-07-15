@@ -21,3 +21,7 @@ const prefixCount = (words, pref) => {
   }
   return count;
 };
+
+//solution 3
+const prefixCount = (words, pref) =>
+  words.filter((word) => word.startsWith(pref)).length;
