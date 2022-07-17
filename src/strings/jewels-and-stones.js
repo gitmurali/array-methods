@@ -23,3 +23,8 @@ var numJewelsInStones = function (jewels, stones) {
 
   return cnt;
 };
+
+// solution 2
+var numJewelsInStones = function (jewels, stones) {
+  return [...stones].filter((char) => jewels.indexOf(char) > -1).length;
+};
