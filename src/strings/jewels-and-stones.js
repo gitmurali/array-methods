@@ -28,3 +28,9 @@ var numJewelsInStones = function (jewels, stones) {
 var numJewelsInStones = function (jewels, stones) {
   return [...stones].filter((char) => jewels.indexOf(char) > -1).length;
 };
+
+// solution 3
+const numJewelsInStones = (J, S) => {
+  const jewels = new Set(J);
+  return S.split("").reduce((res, s) => res + jewels.has(s), 0);
+};
