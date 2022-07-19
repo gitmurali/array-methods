@@ -12,3 +12,17 @@ var numOfStrings = function (patterns, word) {
   });
   return count;
 };
+
+//sol 2
+/**
+ * @param {string[]} patterns
+ * @param {string} word
+ * @return {number}
+ */
+var numOfStrings = function (patterns, word) {
+  let count = 0;
+  patterns.forEach((cv) => {
+    if (word.indexOf(cv) > -1) count++;
+  });
+  return count;
+};
