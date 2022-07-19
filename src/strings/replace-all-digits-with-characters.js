@@ -14,3 +14,14 @@ var replaceDigits = function (s) {
 
   return res;
 };
+
+// sol 2
+var replaceDigits = function (s) {
+  return [...s].reduce(
+    (acc, cur, idx) =>
+      idx % 2
+        ? acc + String.fromCharCode(s[idx - 1].charCodeAt() + Number(cur))
+        : acc + cur,
+    ""
+  );
+};
