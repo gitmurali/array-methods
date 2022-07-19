@@ -13,3 +13,8 @@ var checkIfPangram = function (sentence) {
 
   return true;
 };
+
+//sol 2
+var checkIfPangram = function (sentence) {
+  return new Set(sentence).size === 26;
+};
