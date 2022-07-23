@@ -11,3 +11,12 @@ var areOccurrencesEqual = function (s) {
   for (let c in freq) if (freq[c] && freq[c] != val) return false;
   return true;
 };
+
+// solution 2
+var areOccurrencesEqual = (s) => {
+  let count = s.split("").reduce((obj, cur) => {
+    obj.hasOwnProperty(cur) ? (obj[cur] += 1) : (obj[cur] = 1);
+    return obj;
+  }, {});
+  return new Set(Object.values(count)).size === 1;
+};
