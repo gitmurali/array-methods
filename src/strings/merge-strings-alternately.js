@@ -16,3 +16,15 @@ var mergeAlternately = function (word1, word2) {
     .join("")
     .concat(word2.slice(i));
 };
+
+// sol 2
+const mergeAlternately1 = (a, b) => {
+  const maxLength = Math.max(a.length, b.length);
+  let result = "";
+
+  for (let i = 0; i < maxLength; i++) {
+    result += (a[i] ?? "") + (b[i] ?? "");
+  }
+
+  return result;
+};
