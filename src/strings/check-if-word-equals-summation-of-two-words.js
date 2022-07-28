@@ -24,3 +24,19 @@ var isSumEqual = function (firstWord, secondWord, targetWord) {
 
   return Number(sum1) + Number(sum2) === Number(total);
 };
+
+// same as above but reduced code
+var toInteger = (word) => {
+  return [...word].reduce((res, cv) => {
+    let code = cv.charCodeAt() - 97;
+    return res + code;
+  }, "");
+};
+
+var isSumEqual = function (firstWord, secondWord, targetWord) {
+  const sum1 = toInteger(firstWord);
+  const sum2 = toInteger(secondWord);
+  const total = toInteger(targetWord);
+
+  return Number(sum1) + Number(sum2) === Number(total);
+};
