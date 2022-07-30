@@ -15,3 +15,12 @@ var repeatedCharacter = function (s) {
     }
   }
 };
+
+var repeatedCharacter1 = function (s) {
+  const dict = {};
+  for (const char of s) {
+    if (char in dict) return char;
+    dict[char] = true;
+  }
+  return false;
+};
