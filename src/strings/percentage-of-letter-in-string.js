@@ -15,3 +15,6 @@ var percentageLetter = function (s, letter) {
 
   return Math.floor((cnt / s.length) * 100);
 };
+
+const percentageLetter1 = (s, letter) =>
+  Math.floor(((s.length - s.replaceAll(letter, "").length) * 100) / s.length);
