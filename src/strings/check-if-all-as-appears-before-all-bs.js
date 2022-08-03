@@ -12,3 +12,8 @@ var checkString = function (s) {
   }
   return true;
 };
+
+// simple solution
+var checkString = function (s) {
+  return s.indexOf("ba") === -1;
+};
