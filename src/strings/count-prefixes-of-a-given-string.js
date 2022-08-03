@@ -10,3 +10,8 @@ var countPrefixes = function (words, s) {
     return s.indexOf(word) === 0;
   }).length;
 };
+
+// using reduce sol 2
+var countPrefixes = function (words, s) {
+  return words.reduce((acc, cur) => (acc += s.startsWith(cur)), 0);
+};
