@@ -19,3 +19,8 @@ var squareIsWhite = function (coordinates) {
     }
   }
 };
+
+// solution 2
+var squareIsWhite = function (coordinates) {
+  return coordinates[0].charCodeAt() % 2 !== parseInt(coordinates[1]) % 2;
+};
