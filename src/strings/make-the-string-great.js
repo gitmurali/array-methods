@@ -11,7 +11,6 @@ var makeGood = function (s) {
   let stack = [];
   for (let i = 0; i < s.length; i++) {
     const top = stack[stack.length - 1];
-    console.log(top, s[i]);
     if (
       stack.length > 0 &&
       top.toUpperCase() == s[i].toUpperCase() &&
@@ -21,7 +20,6 @@ var makeGood = function (s) {
     } else {
       stack.push(s[i]);
     }
-    console.log(stack);
   }
   return stack.join("");
 };
