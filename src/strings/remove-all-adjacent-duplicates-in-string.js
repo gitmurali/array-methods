@@ -16,3 +16,9 @@ var removeDuplicates = function (s) {
 
   return st.join("");
 };
+
+//solution 2
+var removeDuplicates = function (s) {
+  const s2 = s.replace(/(.)\1/g, "");
+  return s2.length === s.length ? s : removeDuplicates(s2);
+};
