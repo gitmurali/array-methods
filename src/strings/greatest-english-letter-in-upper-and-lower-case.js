@@ -10,10 +10,8 @@ var greatestLetter = function (s) {
     const code = val.charCodeAt();
     if (code >= 97 && code <= 122) {
       const capital = String.fromCharCode(code - 32);
-      if (s.includes(capital)) {
-        if (code > index) {
-          index = code;
-        }
+      if (s.includes(capital) && code > index) {
+        index = code;
       }
     }
   });
