@@ -5,7 +5,7 @@
  * @return {boolean}
  */
 var areNumbersAscending = function (s) {
-  let num = 0;
+  let num = Number.MIN_VALUE;
   let arr = s.split(" ");
   for (let i = 0; i < arr.length; i++) {
     if (!isNaN(arr[i])) {
