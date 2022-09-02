@@ -8,10 +8,10 @@ var uncommonFromSentences = function (s1, s2) {
   const arr = [...s1.split(" "), ...s2.split(" ")];
   const map = {};
   const result = [];
-  arr.reduce((res, cv) => {
+
+  arr.forEach((cv) => {
     map[cv] = (map[cv] ?? 0) + 1;
-    return res;
-  }, []);
+  });
 
   for (const [key, val] of Object.entries(map)) {
     if (val === 1) {
