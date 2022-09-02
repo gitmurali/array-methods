@@ -21,3 +21,9 @@ var uncommonFromSentences = function (s1, s2) {
 
   return result;
 };
+
+var uncommonFromSentences = function (s1, s2) {
+  return `${s1} ${s2}`
+    .split(" ")
+    .filter((cv, i, arr) => 0 === arr.indexOf(cv) - arr.lastIndexOf(cv));
+};
