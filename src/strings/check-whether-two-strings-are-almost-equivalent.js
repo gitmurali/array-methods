@@ -11,7 +11,7 @@ var checkAlmostEquivalent = function (word1, word2) {
     map[word1[i]] = (map[word1[i]] ?? 0) + 1;
     map[word2[i]] = (map[word2[i]] ?? 0) - 1;
   }
-  console.log(map);
+
   for (const a of Object.values(map)) {
     if (Math.abs(a) > 3) return false;
   }
