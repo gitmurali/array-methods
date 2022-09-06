@@ -35,3 +35,15 @@ var divideString1 = function (s, k, fill) {
     return res;
   }, []);
 };
+
+// solution 3 using padEnd
+var divideString3 = function (s, k, fill) {
+  let res = [];
+  for (let i = 0; i < s.length; i = i + k) {
+    let group = s.substr(i, k);
+    if (group.length < k) group = group.padEnd(k, fill);
+    res.push(group);
+  }
+
+  return res;
+};
