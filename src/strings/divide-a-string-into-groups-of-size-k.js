@@ -20,3 +20,18 @@ var divideString = function (s, k, fill) {
   console.log(res);
   return res;
 };
+
+//solution 2
+var divideString1 = function (s, k, fill) {
+  return [...s].reduce((res, cv, i) => {
+    if (i % k === 0) {
+      let word = s.slice(i, i + k);
+      if (word.length !== k) {
+        res.push(word + fill.repeat(k - word.length));
+      } else {
+        res.push(word);
+      }
+    }
+    return res;
+  }, []);
+};
