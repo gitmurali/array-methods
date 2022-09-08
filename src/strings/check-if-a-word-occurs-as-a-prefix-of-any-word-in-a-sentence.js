@@ -15,3 +15,10 @@ var isPrefixOfWord = function (sentence, searchWord) {
 
   return res;
 };
+
+//solution 2
+function isPrefixOfWord1(sentence, searchWord) {
+  return (
+    sentence.split(" ").findIndex((e) => e.startsWith(searchWord)) + 1 || -1
+  );
+}
