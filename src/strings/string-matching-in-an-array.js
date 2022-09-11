@@ -14,3 +14,10 @@ var stringMatching = function (words) {
   }
   return res;
 };
+
+// solution 2
+var stringMatching = function (words) {
+  return words.filter((word) =>
+    words.some((newWord) => word !== newWord && newWord.includes(word))
+  );
+};
