@@ -1,0 +1,17 @@
+// https://leetcode.com/problems/longest-palindromic-substring/
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function (s) {
+  let ll = 0;
+  let rr = 0;
+  //"babad"
+  for (let i = 0; i < s.length; i++) {
+    for (let j of [i, i + 1]) {
+      for (l = i, r = j; s[l] && s[l] === s[r]; l--, r++)
+        [ll, rr] = r - l + 1 > rr - ll + 1 ? [l, r] : [ll, rr];
+    }
+  }
+  return s.substring(ll, rr + 1);
+};
