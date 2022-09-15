@@ -36,3 +36,5 @@ var pseudoPalindromicPaths = function (root) {
   f(root);
   return count;
 };
+
+// solution 2
