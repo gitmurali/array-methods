@@ -19,3 +19,14 @@ var reverseWords = function (s) {
     }, "")
     .trim();
 };
+
+// solution 2
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseWords3 = function (s) {
+  s.split(" ")
+    .reduce((res, cv) => res + cv.split("").reverse().join("") + " ", "")
+    .trim();
+};
