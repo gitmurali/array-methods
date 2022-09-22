@@ -25,8 +25,30 @@ var reverseWords = function (s) {
  * @param {string} s
  * @return {string}
  */
-var reverseWords3 = function (s) {
+var reverseWords2 = function (s) {
   s.split(" ")
     .reduce((res, cv) => res + cv.split("").reverse().join("") + " ", "")
     .trim();
+};
+
+// solution 3
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseWords3 = function (s) {
+  let res = "";
+  let word = "";
+
+  for (const c of s) {
+    if (c === " ") {
+      res += word + c;
+      word = "";
+    } else {
+      word = c + word;
+    }
+  }
+
+  return res + word;
 };
