@@ -39,3 +39,17 @@ var pathSum = function (root, targetSum) {
   traverse(root);
   return res;
 };
+
+// soultion 2
+
+var pathSum = function (root, targetSum, res = [], visited = []) {
+  if (root) {
+    visited.push(root.val);
+    if (!root.left && !root.right && targetSum - root.val === 0)
+      res.push([...visited]);
+    pathSum(root.left, targetSum - root.val, res, visited);
+    pathSum(root.right, targetSum - root.val, res, visited);
+    visited.pop();
+  }
+  return res;
+};
