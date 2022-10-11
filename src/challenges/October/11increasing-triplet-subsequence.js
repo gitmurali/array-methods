@@ -18,3 +18,24 @@ var increasingTriplet = function (nums) {
 
   return false;
 };
+
+//solution 2
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var increasingTriplet = function (nums) {
+  let small = Infinity;
+  let big = Infinity;
+  for (const n of nums) {
+    if (n <= small) {
+      small = n;
+    } else if (n <= big) {
+      big = n;
+    } else {
+      return true;
+    }
+  }
+
+  return false;
+};
