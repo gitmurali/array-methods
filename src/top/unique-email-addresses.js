@@ -17,3 +17,12 @@ var numUniqueEmails = function (emails) {
 
   return new Set(map).size;
 };
+
+var numUniqueEmails = function (emails) {
+  return new Set(
+    emails.map((email) => {
+      const [local, domain] = email.split("@");
+      return local.split("+").shift().split(".").join("") + "@" + domain;
+    })
+  ).size;
+};
