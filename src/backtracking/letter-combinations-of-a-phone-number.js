@@ -20,7 +20,6 @@ var letterCombinations = function (digits) {
   };
 
   const go = (i, s) => {
-    console.log(i, s);
     if (i === digits.length) {
       res.push(s);
       return;
