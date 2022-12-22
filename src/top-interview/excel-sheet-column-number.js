@@ -10,3 +10,12 @@ var titleToNumber = function (s) {
   }
   return total;
 };
+
+// slightly different approach.
+var titleToNumber = function (s) {
+  let res = 0;
+  for (let c of s) {
+    res = res * 26 + (c.charCodeAt() - "A".charCodeAt(0) + 1);
+  }
+  return res;
+};
