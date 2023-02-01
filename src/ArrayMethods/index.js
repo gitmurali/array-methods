@@ -32,6 +32,34 @@ export function reduce(array, callback, initValue) {
   return acc;
 }
 
+//splice
+export function splice(
+  array,
+  insertAtIndex,
+  removeNumberOfElements,
+  ...values
+) {
+  const firstPart = slice(array, 0, insertAtIndex);
+  const secondPart = slice(array, insertAtIndex + removeNumberOfElements);
+  const removedElements = slice(
+    array,
+    insertAtIndex,
+    insertAtIndex + removeNumberOfElements
+  );
+
+  const joinedParts = firstPart.concat(values, secondPart);
+
+  const { length: joinedPartsLen } = joinedParts;
+
+  for (let index = 0; index < joinedPartsLen; index++) {
+    array[index] = joinedParts[index];
+  }
+
+  array.length = joinedPartsLen;
+
+  return removedElements;
+}
+
 // filter function
 export function filter(array, callback) {
   const { length } = array;
@@ -77,6 +105,7 @@ export function findIndex(array, callback) {
 }
 
 //find
+// if condition matches then return that value
 export function find(array, callback) {
   const { length } = array;
 
@@ -241,34 +270,6 @@ export function slice(array, startIndex = 0, endIndex = array.length) {
   }
 
   return result;
-}
-
-//splice
-export function splice(
-  array,
-  insertAtIndex,
-  removeNumberOfElements,
-  ...values
-) {
-  const firstPart = slice(array, 0, insertAtIndex);
-  const secondPart = slice(array, insertAtIndex + removeNumberOfElements);
-  const removedElements = slice(
-    array,
-    insertAtIndex,
-    insertAtIndex + removeNumberOfElements
-  );
-
-  const joinedParts = firstPart.concat(values, secondPart);
-
-  const { length: joinedPartsLen } = joinedParts;
-
-  for (let index = 0; index < joinedPartsLen; index++) {
-    array[index] = joinedParts[index];
-  }
-
-  array.length = joinedPartsLen;
-
-  return removedElements;
 }
 
 //shift
